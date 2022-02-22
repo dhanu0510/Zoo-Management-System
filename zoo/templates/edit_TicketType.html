@@ -1,0 +1,48 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card shadow mt-2">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Edit Ticket Type</h5>
+        <div class="container-fluid">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="form-row">
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Ticket Type</label>
+                            <input type="text" name="TicketType" value="{{tickets.TicketType}}" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Ticket Price</label>
+                            <input type="text" name="Price" value="{{tickets.Price}}" class="form-control" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Update" class="m-2 px-3 btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if error ==  "no" %}
+<script>
+    alert('Ticket Type Updated');
+    window.location=('{% url 'manage_Ticket_Type' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endif %}
+
+
+{% endblock %}

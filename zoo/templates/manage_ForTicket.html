@@ -1,0 +1,35 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card shadow mt-5">
+    <div class="card-body">
+        <a href="{% url 'add_ForTicket' %}" class="btn btn-primary float-right btn-sm">New Add Foreigner Ticket</a>
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Manage Foreigner Ticket</h5>
+        <div class="container-fluid mt-5">
+            <table class="table table-bordered table-sm" id="example">
+                <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Ticket ID</th>
+                    <th>Generating Ticket Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for i in ticketforeig %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.TicketID}}</td>
+                    <td>{{i.PostingDate}} Rs.</td>
+                    <td><a href="{% url 'view_ForeTicket' i.id %}" class="text-primary">View</a> |
+                        <a href="{% url 'delete_ForeTicket' i.id %}" class="text-danger" onclick="return confirm('Are You Sure?')">Delete</a>
+                    </td>
+                </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

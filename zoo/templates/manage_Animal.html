@@ -1,0 +1,39 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card shadow mt-5">
+    <div class="card-body">
+        <a href="{% url 'add_Animal' %}" class="btn btn-primary float-right btn-sm">New Animal Add Here</a>
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Manage Animal</h5>
+        <div class="container-fluid mt-5">
+            <table class="table table-bordered table-sm" id="example">
+                <thead>
+                <tr>
+                    <th>S No.</th>
+                    <th>Cage Number</th>
+                    <th>Animal Name</th>
+                    <th>Animal Image</th>
+                    <th>Creation Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for i in animal %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.CageNumber}}</td>
+                    <td>{{i.AnimalName}}</td>
+                    <td><img src="{{i.AnimalImage.url}}" height="70" width="70"></td>
+                    <td>{{i.CreationDate}}</td>
+                    <td><a href="{% url 'edit_Animal' i.id %}" class="text-primary">Edit</a> |
+                        <a href="{% url 'delete_Animal' i.id %}" class="text-danger" onclick="return confirm('Are You Sure?')">Delete</a>
+                    </td>
+                </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

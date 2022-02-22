@@ -1,0 +1,68 @@
+{% extends 'navigation.html' %} {% load static %} {% block main %}
+
+<style>
+  .container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-body {
+    background-color: rgb(27, 29, 36);
+    border: 1px solid rgb(27, 29, 36);
+  }
+  .card-body h1 {
+    color: white;
+  }
+  .card-body h4 {
+    color: rgb(108, 114, 146);
+    font-family: sans-serif;
+    font-size:23px;
+  }
+
+  .inner {
+    overflow: hidden;
+  }
+  .inner img {
+    transition: all 0.5s ease;
+  }
+  .inner:hover img {
+    transform: scale(1.1);
+  }
+</style>
+<body style="background-color: Black"></body>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="text-center" style="font-size: 50px">ABOUT</h1>
+      <hr />
+      <div class="row">
+        <div class="col-sm-6 inner">
+          <img
+            src="{% static 'images/tiger31.jpg' %}"
+            style="width: 90%; height: 300px"
+          />
+        </div>
+
+        <div class="col-sm-6">
+          <h4>
+            Zoo Management System is Created Python with django framework and
+            database are used SQLite and front end used HTML,CSS,Bootstratp &
+            JavaScript.
+          </h4>
+          <br />
+          <h4>
+            A zoo, also known as a zoological park or zoological garden, is a
+            place where animals are confined within enclosures for the public to
+            view. Many zoos also breed the animals.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+{% endblock %}

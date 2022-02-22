@@ -1,0 +1,109 @@
+{% extends 'navigation.html' %} {% load static %} {% block main %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/contact.css' %}"
+    />
+
+    <!--<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> -->
+  </head>
+  <body style="background-color: Black">
+    <div class="container" style="background-color: Black">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            If you want to book the ticket then Fill the details of given
+            information.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img
+                src="{% static 'images/location.png' %}"
+                class="icon"
+                alt=""
+              />
+              <p>Ahmedabad</p>
+            </div>
+            <div class="information">
+              <img src="{% static 'images/email.png' %}" class="icon" alt="" />
+              <p>abcdpatel867@gmail.com</p>
+            </div>
+            <div class="information">
+              <img src="{% static 'images/phone.png' %}" class="icon" alt="" />
+              <p>+91 1234567890</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form method="post" autocomplete="off">
+            {% csrf_token %}
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="fullname" class="input" required />
+              <label>Name</label>
+              <span>Name</span>
+            </div>
+
+            <div class="input-container">
+              <input type="tel" name="contact" class="input" required />
+              <label>Contact No</label>
+              <span>Contact No</span>
+            </div>
+
+            <div class="input-container">
+              <input type="email" name="emailid" class="input" required />
+              <label>Email ID</label>
+              <span>Email ID</span>
+            </div>
+
+            <div class="input-container textarea">
+              <textarea name="message" class="input" required></textarea>
+              <label>Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>
+
+{% if error == "no" %}
+<script>
+  alert("Your Message has been Send.");
+  window.location = '{% url "contact" %}';
+</script>
+{% endif %} {% if error == "yes" %}
+<script>
+  alert("Something Went Wrong. Please try again");
+</script>
+{% endif %} {% endblock %}

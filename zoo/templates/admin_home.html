@@ -1,0 +1,104 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="row mt-5">
+
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Today Native Adult Visitor</h5>
+                <h5>{{todaytotaladult.NoAdult__sum }}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_NormalTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Today Normal Children Visitor</h5>
+                <h5>{{todaytotalchild.NoChildren__sum }}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_NormalTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Yesterday Native Adult Visitor</h5>
+                <h5>{{yesterdaytotaladult.NoAdult__sum }}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_NormalTicket' %}">View Details >></a>
+            </div>
+        </div>
+     </div>
+
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Yesterday Normal Child Visitor</h5>
+                <h5>{{yesterdaytotalchild.NoChildren__sum }}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_NormalTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+       <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Today Foreigner Adult Visitor</h5>
+                <h5>{{todaytotalforadult.NoAdult__sum}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_ForTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Today Foreigner Children Visitor</h5>
+                <h5>{{todaytotalforchild.NoChildren__sum}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_ForTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Yesterday Foreigner Adult Visitor</h5>
+                <h5>{{yesterdaytotalforadult.NoAdult__sum}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_ForTicket' %}">View Details >></a>
+            </div>
+        </div>
+     </div>
+
+    <div class="col-sm-3 p-2">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="text-success">Yesterday Foreigner Child Visitor</h5>
+                <h5>{{yesterdaytotalforchild.NoChildren__sum}}</h5>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'manage_ForTicket' %}">View Details >></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

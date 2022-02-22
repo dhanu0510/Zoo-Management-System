@@ -1,0 +1,85 @@
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[22/Feb/2022 14:38:00] "GET / HTTP/1.1" 200 9932
+Traceback (most recent call last):
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 138, in run
+    self.finish_response()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 196, in finish_response
+    self.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 111, in close
+    super().close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/simple_server.py", line 38, in close
+    SimpleHandler.close(self)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 334, in close
+    self.result.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/http/response.py", line 252, in close
+    signals.request_finished.send(sender=self._handler_class)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/dispatch/dispatcher.py", line 175, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/dispatch/dispatcher.py", line 175, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/__init__.py", line 57, in close_old_connections
+    conn.close_if_unusable_or_obsolete()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/base/base.py", line 514, in close_if_unusable_or_obsolete
+    self.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 248, in close
+    if not self.is_in_memory_db():
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 367, in is_in_memory_db
+    return self.creation.is_in_memory_db(self.settings_dict['NAME'])
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/creation.py", line 12, in is_in_memory_db
+    return database_name == ':memory:' or 'mode=memory' in database_name
+TypeError: argument of type 'PosixPath' is not iterable
+[22/Feb/2022 14:38:00] "GET / HTTP/1.1" 500 59
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 63246)
+Traceback (most recent call last):
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 138, in run
+    self.finish_response()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 196, in finish_response
+    self.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 111, in close
+    super().close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/simple_server.py", line 38, in close
+    SimpleHandler.close(self)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 334, in close
+    self.result.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/http/response.py", line 252, in close
+    signals.request_finished.send(sender=self._handler_class)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/dispatch/dispatcher.py", line 175, in send
+    for receiver in self._live_receivers(sender)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/dispatch/dispatcher.py", line 175, in <listcomp>
+    for receiver in self._live_receivers(sender)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/__init__.py", line 57, in close_old_connections
+    conn.close_if_unusable_or_obsolete()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/base/base.py", line 514, in close_if_unusable_or_obsolete
+    self.close()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 248, in close
+    if not self.is_in_memory_db():
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 367, in is_in_memory_db
+    return self.creation.is_in_memory_db(self.settings_dict['NAME'])
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/db/backends/sqlite3/creation.py", line 12, in is_in_memory_db
+    return database_name == ':memory:' or 'mode=memory' in database_name
+TypeError: argument of type 'PosixPath' is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 169, in handle
+    self.handle_one_request()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 194, in handle_one_request
+    handler.run(self.server.get_app())
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 145, in run
+    self.handle_error()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/site-packages/django/core/servers/basehttp.py", line 116, in handle_error
+    super().handle_error()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 381, in handle_error
+    self.finish_response()
+  File "/Users/dhanu/opt/anaconda3/envs/DARK/lib/python3.7/wsgiref/handlers.py", line 184, in finish_response
+    self.write(data)
+

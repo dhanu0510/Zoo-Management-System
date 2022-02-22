@@ -1,0 +1,84 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+
+<div class="card shadow mt-2">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Edit Animal</h5>
+        <div class="container-fluid">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-row">
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Animal Name</label>
+                            <input type="text" name="AnimalName" value="{{animal.AnimalName}}" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Animal Image</label>
+                            <input type="file" name="AnimalImage" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <img src="{{animal.AnimalImage.url}}" name="AnimalImage" height="100" width="100">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Cage Number</label>
+                            <input type="text" name="CageNumber" value="{{animal.CageNumber}}" class="form-control"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Feed Number</label>
+                            <input type="text" name="FeedNumber" value="{{animal.FeedNumber}}" class="form-control"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Breed</label>
+                            <input type="text" name="Breed" value="{{animal.Breed}}" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="Description" class="form-control" required>{{animal.Description}}</textarea>
+                        </div>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Update" class="m-2 px-3 btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if error ==  "no" %}
+<script>
+    alert('Animal details has been Updated');
+    window.location=('{% url 'manage_Animal' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something Went Wrong. Please try again');
+</script>
+{% endif %}
+
+
+{% endblock %}
